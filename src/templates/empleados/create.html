@@ -1,14 +1,37 @@
 {% include 'header.html' %}
-    <form method="POST" action="/store" enctype="multipart/form-data">
-        <label for="txtNombre">Nombre:</label>
-        <input type="text" name="txtNombre" id="txtNombre">
-        <br>
-        <label for="txtCorreo">Correo:</label>
-        <input type="email" name="txtCorreo" id="txtCorreo">
-        <br>
-        <label for="txtFoto">Foto:</label>
-        <input type="file" name="txtFoto" id="txtFoto">
-        <br>
-        <input type="submit" value="Agregar nuevo empleado">
+
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <div class="alert alert-danger" role="alert">
+            {% for msg in messages %}  
+                {{ msg }}  
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endwith %}
+
+    <form method="POST" action="/empleado/crear" enctype="multipart/form-data">
+        <div class="card text-bg-dark border-info">
+            <div class="card-header h2">Crear Usuario</div>
+            <div class="card-body">
+                <p class="card-text">
+                    <div class="form-group h5">
+                        <label for="txtNombre">Nombre:</label>
+                        <input type="text" name="txtNombre" id="txtNombre">
+                    </div>
+                    <div class="form-group h5">
+                        <label for="txtCorreo">Correo:</label>
+                        <input type="email" name="txtCorreo" id="txtCorreo">
+                    </div>
+                    <div class="form-group h5">
+                        <label for="txtFoto">Foto de perfil:</label>
+                        <input type="file" name="txtFoto" id="txtFoto">
+                    </div>
+                    <div class="form-group">
+                        <input class="btn btn-info" type="submit" value="Agregar Perfil">
+                    </div>
+                </p>
+            </div>
+        </div>
     </form>
 {% include 'footer.html' %}
