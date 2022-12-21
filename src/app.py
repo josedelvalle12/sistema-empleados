@@ -47,7 +47,7 @@ def index():
     sql = "SELECT * FROM empleados;"
     empleados = queryMysql(sql, None, "all")
     print(empleados)
-    return render_template('empleados/index.html', empleados=empleados)
+    return render_template('../index.html', empleados=empleados)
 
 @app.route('/empleado/crear', methods=["GET", "POST"])
 def alta_empleado():
