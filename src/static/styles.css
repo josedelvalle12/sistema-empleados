@@ -1,0 +1,32 @@
+body {
+    background-color: var(--bs-dark);
+}
+
+td {
+    vertical-align: middle !important;
+}
+
+.card-body, .form-group {
+    padding: 10px;
+}
+
+.table {
+    border-color: var(--bs-info);
+}
+
+#btnBorrar {
+    background-color: #c02e3d;
+}
+
+.btn-primary {
+    margin-left: 150px;
+}
+
+.tarjetas_ {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 15px;
+}
+
